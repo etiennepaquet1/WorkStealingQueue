@@ -86,7 +86,7 @@ int main(int argc, char *argv[]) {
 		// 2. Single producer, multiple consumers
 		// ---------------------------------------------------
 		{
-			const int numThieves = 4;
+			const int numThieves = 2;
 			std::vector<std::thread> thieves;
 			std::vector<example_queue> thieves_queues(numThieves);
 			example_queue producer;
