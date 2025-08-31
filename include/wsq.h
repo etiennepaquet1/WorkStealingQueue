@@ -109,7 +109,6 @@ public:
 		// Decrement bottom_ to prevent thieves from initiating a steal().
 		const auto pop_idx = bottom_.load(std::memory_order_relaxed) - 1;
 		bottom_.store(pop_idx, std::memory_order_release);
-		// possibly need a fence here.
 		auto top = top_.load(std::memory_order_acquire);
 		if (pop_idx < top) {
 			// Revert decrement of bottom_.
